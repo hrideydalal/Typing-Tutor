@@ -1,71 +1,133 @@
 # Typing Tutor with Hand Gesture Recognition
 
-This project is a webcam-based AI typing tutor that helps users improve their 10-finger typing skills using real-time hand gesture tracking. The system evaluates whether the user is pressing the correct key with the correct finger based on standard typing rules, providing immediate visual feedback and maintaining score tracking.
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Made with](https://img.shields.io/badge/Built%20With-OpenCV%20%7C%20cvzone%20%7C%20Pygame-blue)
 
-## Project Overview
+A real-time AI-based typing tutor that uses **hand gesture recognition via webcam** to help users practice proper 10-finger typing. The system detects finger positions on a virtual keyboard, tracks accuracy, and provides instant visual feedback — making it ideal for learning touch-typing interactively.
 
-Typing Tutor uses computer vision techniques to overlay a virtual keyboard and detect finger positions through a webcam. When the program prompts a character, the user must use the correct finger and gesture to press it. The system highlights whether the attempt was correct or incorrect based on both position and finger usage.
+---
 
-This project is useful for:
-- Teaching correct finger-to-key mappings
-- Practicing typing without a physical keyboard
-- Enhancing motor memory using visual learning
+## 🧠 Why This Project?
 
-## Features
+Traditional typing tutors rely on physical keyboards. This project introduces an **innovative learning experience** using:
+- Real-time **hand tracking**
+- **Gesture-based input validation**
+- A gamified, camera-driven interface for faster muscle memory development
 
-- Virtual keyboard rendered on screen
-- Random character prompts for the user to type
-- Real-time hand tracking using a webcam
-- Finger identification and location mapping
-- Visual indicators for correct and incorrect attempts
-- Real-time score tracking for correct and wrong responses
+---
 
-## Requirements
+## 🚀 Features
 
-To run the project, you must have Python 3.8 or higher and the following Python packages installed:
+- 🧠 Detects correct finger usage for each key
+- ⌨️ Virtual keyboard with live overlay
+- 🔡 Randomized character prompts to practice
+- 📷 Real-time webcam tracking using `cvzone` (built on MediaPipe)
+- ✅ Green/red highlights for correct/incorrect inputs
+- 📊 Score tracking for typing accuracy
 
-- opencv-python
-- numpy
-- pygame
-- cvzone
+---
 
-You can install all dependencies using the command:
+## 🛠️ Tech Stack
+
+| Component      | Library / Tool         |
+|----------------|------------------------|
+| Hand Tracking  | cvzone, OpenCV         |
+| GUI Overlay    | Pygame                 |
+| Image Handling | OpenCV, NumPy          |
+| Language       | Python 3.8+            |
+
+---
+
+## 💻 Installation
+
+### ✅ Requirements
+
+Make sure you have **Python 3.8+** and install the following dependencies:
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
-## Getting Started
+### `requirements.txt` contents:
 
-1. Clone the repository or download the project files.
-2. Ensure `Background.png` is in the root directory. This image contains the UI layout with the virtual keyboard and score areas.
-3. Run the script using:
+```
+opencv-python
+cvzone
+pygame
+numpy
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/typing-tutor-hand-gesture.git
+cd typing-tutor-hand-gesture
+```
+
+### 2. Make Sure This File Exists:
+
+- `Background.png` → The UI layout image (keyboard + score zones)
+
+### 3. Run the App
 
 ```bash
 python typingTutor.py
 ```
 
-4. Follow the prompts on the screen and place your hands in the webcam view.
+The webcam will activate and the system will prompt you to type characters using the correct finger.
 
-## File Structure
+---
+
+## 🔍 How It Works
+
+1. A **background image** is loaded with a virtual keyboard.
+2. **Webcam feed** overlays your hand using OpenCV.
+3. **Hand landmarks** are detected using `cvzone` (powered by MediaPipe).
+4. The program checks:
+   - Finger tip location
+   - Key being touched
+   - If the correct finger is used
+5. Feedback is given instantly:
+   - ✅ Correct → Green highlight
+   - ❌ Incorrect → Red highlight
+6. Scores are updated and displayed in real-time.
+
+---
+
+## 📁 File Structure
 
 ```
 typing-tutor/
-├── typingTutor.py           # Main script with application logic
-├── Background.png           # Background layout with keyboard and score zones
-├── requirements.txt         # Python dependencies
+├── typingTutor.py           # Main script with hand tracking + logic
+├── Background.png           # Background image with keyboard UI
+├── requirements.txt         # Dependencies list
 └── README.md                # Project documentation
 ```
 
-## How It Works
+---
 
-* The webcam feed is projected onto a background image containing the keyboard layout.
-* Hand landmarks are detected using `cvzone` (built on MediaPipe).
-* Finger tips are tracked and mapped to the warped keyboard image.
-* The program evaluates whether the right finger is placed over the prompted key using bounding boxes.
-* Based on the detection, a green or red overlay indicates success or failure.
-* Scores are updated in real-time and displayed on the interface.
+## 📌 To-Do / Enhancements
 
-## License
+- Add leaderboard or session logs
+- Support full words and timed tests
+- Add sound feedback (key click / error sound)
+- Add left/right hand view toggle
 
-This project is licensed under the MIT License.
+---
+
+## 👤 Author
+
+**Hridey Dalal**  
+📧 [hrideydalal1@gmail.com](mailto:hrideydalal1@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/hridey-/)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
